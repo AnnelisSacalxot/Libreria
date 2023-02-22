@@ -7,17 +7,29 @@ gcc libreria.c -o libreriaFuncional
 ./libreriaFuncional
 */
 
-void menu();
 
 //estructura de datos
 typedef struct atributoLibro{
     char* nombreLibro;
     double precioLibro;
-    bool estadoLibro;
+    int estadoLibro;
 }atributoLibro;
+
+//funciones
+void menu();
+void agregarLibros();
+void ventaLibro();
+void listaLibros();
+void modificarPrecio();
+void disponibilidadLibro();
  
 int main(){
 menu();
+agregarLibros();
+ventaLibro();
+listaLibros();
+modificarPrecio();
+disponibilidadLibro();
 return 0;
 
 }
@@ -41,19 +53,19 @@ void menu(){
     switch (opcion)
     {
     case 1:
-       //agregarLibros(nombre,precio,estado);
+        agregarLibros();
         break;
     case 2:
-         //ventaLibro();
+          ventaLibro;
         break;
     case 3:
-         //listaLibros();
+         listaLibros;
         break;
     case 4:
-        //division(primerN, segundoN);
+        modificarPrecio;
         break;    
     case 5:
-        
+        disponibilidadLibro;
     break;
     case 6:
          exit;
@@ -64,4 +76,38 @@ void menu(){
             }
        
        }
+}
+
+//funciones
+
+void agregarLibros(){
+
+    atributoLibro libro; 
+    printf("\n Atributos del libro \n");
+    printf("\n Escriba precio del libro \n");
+    scanf("%lf", &libro.precioLibro);
+    printf("\n Escriba estado del libro en rango del 1 al 10\n");
+    scanf("%i", &libro.estadoLibro);
+    printf("\n Escriba nombre del libro \n");
+    scanf("%s", &libro.nombreLibro);
+}
+
+void ventaLibro(){
+
+}
+
+void listaLibros(){
+      //atributoLibro libro;
+
+
+}
+
+void modificarPrecio(){
+//usare punteros
+
+
+}
+
+void disponibilidadLibro(){
+
 }
