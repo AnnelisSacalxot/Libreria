@@ -14,6 +14,7 @@ typedef struct atributoLibro{
     double precioLibro;
     int estadoLibro;
 }atributoLibro;
+ 
 
 //funciones
 void menu();
@@ -22,8 +23,16 @@ void ventaLibro();
 void listaLibros();
 void modificarPrecio();
 void disponibilidadLibro();
- 
+
+//puntero
+void precioNuevo(double* precioActual){
+    double nuevo = libro.precioLibro;
+    *precioActual = nuevo;
+}
+
+//clase principal 
 int main(){
+
 menu();
 agregarLibros();
 ventaLibro();
@@ -56,19 +65,19 @@ void menu(){
         agregarLibros();
         break;
     case 2:
-          ventaLibro;
+          ventaLibro();
         break;
     case 3:
-         listaLibros;
+         listaLibros();
         break;
     case 4:
-        modificarPrecio;
+        modificarPrecio();
         break;    
     case 5:
-        disponibilidadLibro;
+        disponibilidadLibro();
     break;
     case 6:
-         exit;
+         exit(0);
         break;                                 
     default:
         printf("No existe la opcion");
@@ -79,10 +88,9 @@ void menu(){
 }
 
 //funciones
-
+atributoLibro libro;
 void agregarLibros(){
-
-    atributoLibro libro; 
+   // atributoLibro libro; 
     printf("\n Atributos del libro \n");
     printf("\n Escriba precio del libro \n");
     scanf("%lf", &libro.precioLibro);
@@ -97,16 +105,22 @@ void ventaLibro(){
 }
 
 void listaLibros(){
-      //atributoLibro libro;
 
+
+printf("\n Nombre del libro %s \n", libro.nombreLibro);
 
 }
 
 void modificarPrecio(){
 //usare punteros
-
+printf("\n Precio del libro actual %lf \n", libro.precioLibro);
+printf("\n Ingrese el precio nuevo \n");
+scanf("%lf", libro.precioLibro);
+precioNuevo(&libro.precioLibro);
+printf("\n El nuevo precio del libro es: %lf \n ", libro.precioLibro);
 
 }
+
 
 void disponibilidadLibro(){
 
